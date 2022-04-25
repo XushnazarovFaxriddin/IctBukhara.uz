@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Kurs>
+@{
+    ViewData["Title"] = "Barcha kurslar";
+}
+@section CssRender
+    {
+    <link rel="stylesheet" href="~/style/sass/kurslar.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/style/sass/responsive2.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/style/sass/ssssss.css" asp-append-version="true" />
+}
+    <div id="img">
+        <img src="~/img/Brcha_kurslar.png" asp-append-version="true" alt="">
+        <div class="tor"></div>
+        <h1>Barcha kurslar</h1>
+    </div>
+
+    <div class="Courses">
+    @try
+    {
+        @foreach (var kurs in Model)
+        {
+            <div onclick="window.location.href='/Home/Kurs?id=@kurs.Id'" class="Course">
+                <div class="img">
+                    <img src="~/@kurs.ImageName" asp-append-version="true" alt="c++">
+                </div>
+
+                <h3>@kurs.Name</h3>
+
+                <div class="user">
+                    <img src="~/@kurs.Mentor?.ImageName" asp-append-version="true" alt="user">
+                    <h5>@kurs.Mentor?.FullName</h5>
+                </div>
+            </div>
+        }
+    }
+    catch (Exception e)
+    {
+        <h1>Texnik profilaktika</h1>
+    }
+</div>

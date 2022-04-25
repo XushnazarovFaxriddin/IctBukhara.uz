@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body #begin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+body #begin .cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+body #begin .cards .card {
+  width: 400px;
+  height: 75px;
+  margin: 15px 15px;
+  padding: 0 15px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #begin .cards .card .text h2 {
+  font-size: 20px;
+}
+
+body #begin .cards .card .icons a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body #begin .cards .card .icons a ion-icon {
+  font-size: 20px;
+  color: black;
+}
+
+body #begin .cards .card .icons a ion-icon:hover {
+  color: blue;
+}
+
+@media screen and (max-width: 890px) {
+  body #begin .cards {
+    -ms-grid-columns: auto !important;
+        grid-template-columns: auto !important;
+  }
+}
+/*# sourceMappingURL=admincha.css.map */

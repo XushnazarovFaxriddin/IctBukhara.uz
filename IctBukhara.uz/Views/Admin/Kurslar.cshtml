@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Kurs>
+@{
+    ViewData["Page"] = "Kurslar";
+}
+<div style="display:flex; margin-left:15px">
+    <h1>Academiya Kurslari</h1>
+    <div style="align-items:end; width:150px; height:50px; position:absolute; right:0px; margin:10px">
+        <a type="submit" asp-action="AddKurs" class="btn btn-success">
+            Qo'shish
+        </a>
+    </div>
+</div>
+
+<div style="display:flex; flex-wrap:wrap; align-items: center; justify-content: center;">
+    @if (Model is not null)
+        @foreach (Kurs kurs in Model)
+        {
+            <div class="card" style="width: 18rem; margin:10px; margin-bottom:10px !important;">
+                <img src="~/@kurs?.ImageName" asp-append-version="true" class="card-img-top">
+                <div class="card-body" style="margin-bottom:-20px;">
+                    <p class="card-text"><b>@kurs.Name</b></p>
+                    <p class="card-text">@kurs.Mentor?.FullName</p>
+                    <div style="display:flex">
+                        <button style="width:100px; padding:0; height:35px; align-items:end"
+                            type="button" class="btn btn-success" onclick="window.location.href='/Admin/EditKurs?id=@(kurs.Id)'">
+                            Tahrirlash
+                        </button>
+                        <form asp-action="DeleteKurs" asp-controller="Admin" asp-route-id="@kurs.Id" id="form-del-@kurs.Id" method="post">
+                            <input onclick="deleteKurs('@kurs.Name.Replace("\'","`")', @kurs.Id)"
+                           style="width:100px; padding:0; height:35px; position:absolute; right:20px"
+                           type="button" class="btn btn-danger" value="O'chirish" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+</div>
+<script>
+    function deleteKurs(msg, id) {
+        var answer = window.confirm("Haqiqatdan ham " + msg + " kursini o'chirmoqchimisiz?");
+        if (answer) {
+            console.log("KursName: " + msg);
+            console.log("Id: " + id);
+            document.getElementById(`form-del-${id}`).submit();
+        }
+        else {
+            console.log(msg + " o'chirilmadi!");
+        }
+    }
+</script>

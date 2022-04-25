@@ -1,0 +1,70 @@
+@media screen and (max-width: 500px) {
+    body #begin .container .Courses .Course .img {
+        height: auto !important;
+    }
+  
+    body #begin .container .Courses .Course {
+      width: 175px !important;
+      height: 225px !important;
+    }
+  
+    body #begin .container .Courses .Course .user {
+        margin-top: 4px !important;
+    }
+  
+    body #begin .container .Courses .Course h3 {
+        margin-top: 14px !important;
+        margin-left: 14px !important;
+    }
+  
+    body #begin .container #img {
+        width: 385px !important;
+        height: 80px !important;
+    }
+  
+    body #begin .container .Courses {
+        margin-bottom: 725px !important;
+    }
+}
+@media screen and (max-width: 400px) {
+    body #begin .container .Courses .Course h3 {
+        margin-top: 8px !important;
+        margin-left: 10px !important;
+    }
+
+    body #begin .container .Courses .Course h3 {
+        font-size: 20px !important;
+    }
+
+    body #begin .container .Courses .Course .user h5 {
+        font-size: 14px !important;
+    }
+
+    body #begin .container .Courses .Course .user img {
+        margin: 0px 5px !important;
+    }
+
+    body #begin .container .Courses .Course {
+        width: 150px !important;
+        height: 200px !important;
+    }
+
+    body #begin .container #img {
+        width: 330px !important;
+        height: 80px !important;
+    }
+
+    body #begin .container #img h1 {
+        font-size: 35px !important;
+    }
+}
+@media screen and (max-width: 350px) {
+    body #begin .container .Courses .Course {
+        margin: 4px !important;
+    }
+
+    body #begin .container #img {
+        width: 300px !important;
+        height: 80px !important;
+    }
+}

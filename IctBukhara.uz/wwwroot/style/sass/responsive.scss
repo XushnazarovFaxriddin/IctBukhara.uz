@@ -1,0 +1,353 @@
+@media screen and (max-width: 1270px) {
+    body #begin #menu img {
+        margin-right: 50px !important;
+    }
+
+    body #begin #menu .phone {
+        margin-left: 50px !important;
+    }
+
+    body #begin #menu .phone .number img {
+        margin: 0 !important;
+    }
+
+    body #begin #menu ul li a {
+        margin: 0 30px !important;
+    }
+
+    body #begin .container #main .text {
+        width: 425px !important;
+    }
+
+    body #begin .container #main .img {
+        margin-left: 25px !important;
+    }
+
+    body #begin .container #main .img img {
+        width: 460px !important;
+    }
+
+    body #begin .container #about .text {
+        width: 510px !important;
+    }
+
+    body #begin .container #about .video a img {
+        width: 460px !important;
+        height: auto !important;
+    }
+
+    body #begin .container #about .video h2 {
+        margin-bottom: 10px !important;
+    }
+
+    body #begin .container #Courses .Courses {
+        grid-template-columns: auto auto auto !important;
+    }
+
+    body #begin .container {
+        width: 90% !important;
+    }
+
+    body #begin {
+        width: 100vw !important;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    body #begin .container #about .text {
+        width: 87% !important;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    body #begin #menu ul li a {
+        margin: 0 20px !important;
+    }
+
+    body #begin #menu img {
+        margin-right: 30px !important;
+    }
+
+    body #begin #menu .phone {
+        margin-left: 30px !important;
+    }
+
+    body #begin .container #Courses .Courses {
+        grid-template-columns: auto auto !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body #begin .container #about .video a img {
+        width: 340px !important;
+        height: auto !important;
+    }
+
+    body #begin .container #main {
+        grid-template-columns: auto !important;
+    }
+
+    body #begin .container #main .text {
+        width: 510px !important;
+    }
+
+    body #begin .container #about {
+        grid-template-columns: auto !important;
+    }
+
+    body #begin .container #about .video {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    body #begin .container #about .video a img {
+        width: 420px !important;
+        height: auto !important;
+    }
+
+    body #begin .container #about .text {
+        margin-top: 20px !important;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    body #begin #menu .phone {
+        display: none !important;
+    }
+
+    body #begin .container #Mentors .cards .card {
+        width: 280px !important;
+        height: 410px !important;
+
+        .img {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    #footer > div > div.footer_menu > div.menu {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    body #begin .container #footer .footer_menu {
+        align-items: center !important;
+    }
+
+    body #begin .container #footer .footer_loc {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        grid-template-columns: auto !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    body #begin .container #footer {
+        height: auto !important;
+    }
+
+    body #begin .container #Mentors {
+        margin-bottom: 650px !important;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    body #begin #menu ul {
+        display: none;
+    }
+
+    body #begin #menu {
+        justify-content: space-between !important;
+        padding: 0 20px;
+
+        .menu_icons {
+            display: flex !important;
+
+            ion-icon {
+                color: #fff;
+                font-size: 40px;
+                cursor: pointer;
+
+                &:hover {
+                    color: rgb(2, 68, 248);
+                }
+            }
+        }
+
+        ul {
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            position: absolute;
+            background: #2D2550;
+            width: 100vw;
+            height: 280px;
+            top: 100px;
+            left: 0;
+            right: 0;
+            border-top: 1px solid #fff;
+
+            li {
+                margin: 20px 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 610px) {
+    body #begin .container #Courses .Courses .Course {
+        margin: 24px;
+        width: 220px !important;
+        height: 280px !important;
+    }
+
+    body #begin .container #Courses .Courses .Course .img {
+        width: 100% !important;
+        height: 170px;
+    }
+
+    body #begin .container #Courses .Courses .Course h3 {
+        margin-top: 4px !important;
+    }
+
+    body #begin .container #Courses .Courses .Course .user {
+        margin-top: 30px !important;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #footer > div > div.footer_menu > div.menu {
+        grid-template-columns: auto auto !important;
+    }
+
+    body #begin .container #footer .footer_menu .menu a {
+        margin-right: 45px !important;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body #begin .container #main .text {
+        width: 380px !important;
+    }
+
+    body #begin .container #main .img {
+        margin-left: 0px !important;
+    }
+
+    body #begin .container #main .img img {
+        width: 380px !important;
+    }
+
+    body #begin .container #Courses .Courses .Course {
+        margin: 5px !important;
+        width: 208px !important;
+        height: 270px !important;
+    }
+
+    body #begin .container #Courses .Courses .Course .user {
+        margin-top: 20px !important;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    body #begin .container #about .video a img {
+        width: 362px !important;
+        height: auto !important;
+    }
+
+    body #begin .container #Courses h2 {
+        font-size: 23px !important;
+        margin-bottom: 0px !important;
+    }
+
+    body #begin .container #Courses .sah a {
+        font-size: 23px !important;
+    }
+
+    body #begin .container #Courses .sah {
+        margin-bottom: 10px;
+    }
+
+    body #begin .container #footer .footer_loc #icons .d-f {
+        display: grid !important;
+        grid-template-columns: auto auto auto;
+    }
+
+    body #begin .container #Mentors {
+        margin-bottom: 715px !important;
+    }
+
+    body #begin .container #footer .footer_loc #icons .d-f .d-f:nth-child(2) {
+        margin-left: 29px !important;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    body #begin .container #Courses .Courses {
+        grid-template-columns: auto !important;
+
+        .Course {
+            margin-bottom: 15px !important;
+
+            // &:nth-child(5) {
+            //     display: none !important;
+            // }
+            // &:nth-child(6) {
+            //     display: none !important;
+            // }
+            // &:nth-child(7) {
+            //     display: none !important;
+            // }
+            // &:nth-child(8) {
+            //     display: none !important;
+            // }
+        }
+    }
+
+    body #begin .container #Courses h2 {
+        font-size: 18px !important;
+    }
+
+    body #begin .container #Courses .sah a {
+        font-size: 18px !important;
+    }
+
+    #footer > div > div.footer_menu > div.menu {
+        -ms-grid-columns: auto auto !important;
+        grid-template-columns: auto !important;
+    }
+
+    body #begin .container #footer .footer_menu {
+        margin-bottom: 17px !important;
+        height: 100px !important;
+    }
+
+    body #begin .container #main .text {
+        width: 340px !important;
+    }
+
+    body #begin .container #main .img img {
+        width: 330px !important;
+    }
+
+    body #begin .container #about .video a img {
+        width: 333px !important;
+        height: auto !important;
+    }
+}
+@media screen and (max-width: 342px) {
+    body #begin .container #about .video a img {
+        width: 290px !important;
+    }
+
+    body #begin .container #main .text {
+        width: 295px !important;
+    }
+}

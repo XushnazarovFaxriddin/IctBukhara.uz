@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Mentor>
+@{
+    ViewData["Page"] = "Mentorlar";
+}
+<div style="display:flex; margin-left:15px">
+    <h1>Mentorlar</h1>
+    <div style="align-items:end; width:150px; height:50px; position:absolute; right:0px; margin:10px">
+        <a type="submit" asp-action="AddMentor" class="btn btn-success">
+            Qo'shish
+        </a>
+    </div>
+</div>
+<div style="display:flex; flex-wrap:wrap; align-items: center; justify-content: center;">
+    @if (Model is not null)
+        @foreach (Mentor mentor in Model)
+        {
+            <div class="card" style="width: 18rem; margin:10px; margin-bottom:10px !important;">
+                <img src="~/@mentor?.ImageName" asp-append-version="true" class="card-img-top">
+                <div class="card-body" style="margin-bottom:-20px;">
+                    <p class="card-text"><b>@mentor.FullName</b></p>
+                    <p class="card-text">@mentor.Discription</p>
+
+                    <a style="color:#1B63ED" href="@mentor.CvUrl">@mentor.Cv.ToString()</a>
+
+                    <div style="display:flex">
+                        @*<form asp-action="EditMentor" asp-controller="Admin" asp-route-id="@mentor.Id" method="get">*@
+                        <a asp-action="EditMentor" asp-controller="Admin" asp-route-id="@mentor.Id"
+                                style="width:100px; padding:0; height:35px; align-items:end"
+                                class="btn btn-success">
+                            Tahrirlash
+                        </a>
+                        @*</form>*@
+                        <form asp-action="DeleteMentor" asp-controller="Admin" asp-route-id="@mentor.Id" id="form-del-@mentor.Id" method="post">
+                            <input onclick="deleteMentor('@(mentor.FullName.Replace("\'","`"))', @mentor.Id)"
+                           style="width:100px; padding:0; height:35px; position:absolute; right:20px"
+                           type="button" class="btn btn-danger" value="O'chirish" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+</div>
+<script>
+    function deleteMentor(msg, id) {
+        var answer = window.confirm("Haqiqatdan ham " + msg + " ni o'chirmoqchimisiz?\n" +
+            "Bu Mentorni o'chirsangiz unga ulangan kurslar ham o'chiriladi!");
+        if (answer) {
+            console.log("FullName: " + msg);
+            console.log("Id: " + id);
+            document.getElementById(`form-del-${id}`).submit();
+        }
+        else {
+            console.log(msg + " o'chirilmadi!");
+        }
+    }
+</script>

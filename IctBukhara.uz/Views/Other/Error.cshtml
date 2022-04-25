@@ -1,0 +1,9 @@
+﻿<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const msg = urlParams.get('msg');
+    if (msg.length > 0) {
+        alert(msg);
+        document.getElementsByTagName('h1')[0].innerText=`Bag => ${msg}`
+    }
+</script>
+<h1>Bag => </h1>

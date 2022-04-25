@@ -1,0 +1,197 @@
+@media screen and (max-width: 1290px) {
+  #begin .container .haqida {
+    width: 90% !important;
+  }
+  #begin .container .haqida .dav .text p {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #begin .container .haqida .dav .img {
+    width: 170px !important;
+    height: 170px !important;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #begin .container .haqida .dav {
+    -ms-grid-columns: auto !important;
+        grid-template-columns: auto !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #begin .container .haqida .dav .text {
+    margin-left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #begin .container .haqida h2 {
+    font-size: 20px !important;
+    margin-bottom: 35px !important;
+  }
+  #begin .container .haqida h1 {
+    font-size: 20px !important;
+  }
+  #begin .container .haqida .dav .text p {
+    font-size: 14px !important;
+  }
+  #begin .container .haqida .dav .text h3 {
+    margin-top: 35px !important;
+    font-size: 13px !important;
+  }
+  #begin .container .haqida ul li {
+    font-size: 14px !important;
+  }
+  #begin .container .haqida a {
+    margin-top: 40px !important;
+    margin-bottom: 50px !important;
+    width: 160px !important;
+    height: 35px !important;
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  body #modal_r #kurs_reg {
+    width: 960px !important;
+    height: 540px !important;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  body #modal_r #kurs_reg .img {
+    margin-right: 20px !important;
+  }
+  body #modal_r #kurs_reg {
+    width: 875px !important;
+    height: 460px !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body #modal_r #kurs_reg .img {
+    width: 300px !important;
+    height: auto !important;
+  }
+  body #modal_r #kurs_reg .text h1 {
+    font-size: 25px !important;
+  }
+  body #modal_r #kurs_reg .text p {
+    font-size: 14px !important;
+  }
+  body #modal_r #kurs_reg .text input {
+    width: 100% !important;
+  }
+  body #modal_r #kurs_reg .text .phone {
+    width: 100% !important;
+  }
+  body #modal_r #kurs_reg .text a {
+    width: 100% !important;
+  }
+  body #modal_r #kurs_reg .text {
+    width: 300px !important;
+  }
+  body #modal_r #kurs_reg {
+    width: 700px !important;
+    height: 470px !important;
+  }
+  body #modal_r #kurs_reg ion-icon {
+    top: 20px !important;
+    right: 20px !important;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  body #modal_r #kurs_reg {
+    -ms-grid-columns: auto !important;
+        grid-template-columns: auto !important;
+  }
+  body #modal_r #kurs_reg .img {
+    display: none;
+  }
+  body #modal_r #kurs_reg {
+    width: 380px !important;
+    height: 470px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body #modal_r #kurs_reg {
+    width: 330px !important;
+    height: 420px !important;
+  }
+  body #modal_r #kurs_reg .text h1 {
+    font-size: 20px !important;
+  }
+  body #modal_r #kurs_reg .text input {
+    height: 40px !important;
+  }
+  body #modal_r #kurs_reg .text .phone {
+    height: 40px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body .modal_res #tasdiq {
+    width: 430px !important;
+    height: 530px !important;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  #begin .container .kurslar {
+    margin-bottom: 670px !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #begin .container .kurslar {
+    margin-bottom: 720px !important;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  #begin .container .kurslar {
+    margin-bottom: 740px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body .modal_res #tasdiq {
+    width: 430px !important;
+    height: 530px !important;
+  }
+  body #modal_t #tasdiq h1 {
+    font-size: 25px !important;
+  }
+  body #modal_t #tasdiq p {
+    font-size: 14px !important;
+  }
+  body #modal_t #tasdiq .img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  body #modal_t #tasdiq h3 {
+    margin-top: 320px !important;
+    width: 280px !important;
+    height: 52px !important;
+  }
+  body .modal_res #tasdiq {
+    width: 370px !important;
+    height: 430px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body .modal_res #tasdiq {
+    width: 310px !important;
+    height: 430px !important;
+  }
+}
+/*# sourceMappingURL=responsive3.css.map */

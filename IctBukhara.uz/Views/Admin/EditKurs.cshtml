@@ -1,0 +1,108 @@
+﻿@model EditKursPost
+@{
+    ViewData["Page"] = "Kurslarni tahrirlash";
+    var kurs = ViewData["Kurs"] as Kurs;
+    var mentorSelects = ViewData["MentorSelect"] as List<MentorSelect>;
+}
+@if (mentorSelects is null || mentorSelects.Count() == 0 || kurs is null)
+{
+    <h1>
+        Mentorlarni tanlashda xatolik!
+    </h1>
+    return;
+}
+
+<style>
+    .bor {
+        border: 1px solid gray !important;
+        padding: 5px !important;
+    }
+
+    main {
+        margin: 0 10px;
+        overflow: hidden !important;
+    }
+
+    .endss {
+        align-items: end;
+        justify-content: end;
+        margin-top: 20px;
+    }
+
+</style>
+
+<main>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row g-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-3">@kurs.Name kursini tahrirlash</h4>
+                        <form class="needs-validation" asp-action="EditKurs" asp-controller="Admin" enctype="multipart/form-data" method="post">
+                            <div class="row g-3">
+
+                                <input type="hidden" asp-for="Id" value="@kurs.Id" />
+
+                                <div class="col-12">
+                                    <label for="firstname" class="form-label">Kurs Nomi</label>
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                    <input asp-for="Name" style="border:solid; border-color:gray;" value="@kurs.Name" type="text" class="form-control bor" id="text">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="formFile" style="color:crimson;" class="form-label">Kurs rasmini yuklang! (yuklamasangiz avvalgi rasm turadi.)</label>
+                                    <span asp-validation-for="Image" class="text-danger"></span>
+                                    @*@Html.TextBoxFor(model => model.Image, new { @value = "https://"+ Context.Request.Host+"/"+kurs.ImageName.Replace(@"\","/"), @type = "file", @class="form-control bor", @id="formFile", @accept="image/png, image/jpg, image/jpeg"})*@
+                                    <input asp-for="Image" class="form-control bor" accept="image/png, image/jpg, image/jpeg" type="file" id="formFile">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Kurs haqida</label>
+                                    <span asp-validation-for="Discription" class="text-danger"></span>
+                                    <textarea asp-for="Discription" class="form-control bor" id="Discription" rows="3"></textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="firstname" class="form-label">Kurs davomiyligi</label>
+                                    <span asp-validation-for="Duration" class="text-danger"></span>
+                                    <input asp-for="Duration" style="border:solid; border-color:gray;" value="@kurs.Duration" type="text" class="form-control bor" id="text">
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="state" class="form-label">Mentorni tanlang.</label>
+                                    <span asp-validation-for="MentorId" class="text-danger"></span>
+                                    <select id="SelectMentorId" asp-for="MentorId"
+                                            asp-items="@(new SelectList(mentorSelects, nameof(MentorSelect.Id), nameof(MentorSelect.Name)))">
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="lastName" class="form-label">Kurs davomida nimalar o'tiladi?</label>
+                                    <span asp-validation-for="Learning" class="text-danger"></span>
+                                    <textarea asp-for="Learning" class="form-control bor" id="Learning" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-12 d-flex endss">
+                                <button class="btn btn-success" type="submit">Tahrirlash</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <footer class="pt-5 my-5 text-muted border-top">
+                Created by Faxriddin Xushnazarov
+            </footer>
+        </div>
+    </div>
+</main>
+<script>
+    function Load() {
+        document.getElementById('Learning').defaultValue = '@Html.Raw(kurs.Learning.Replace('\'','`'))';
+        document.getElementById('Discription').defaultValue = '@Html.Raw(kurs.Discription.Replace('\'','`'))';
+        document.getElementById('SelectMentorId').value = @kurs.MentorId;
+    }
+    setTimeout(Load(), 1500);
+</script>

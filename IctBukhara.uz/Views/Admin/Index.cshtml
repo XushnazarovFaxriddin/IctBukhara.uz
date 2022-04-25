@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Page"] = "Bosh sahifa";
+}
+    Admin paneldan salom.
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const msg = urlParams.get('msg');
+    if(msg.length>0)
+        alert(msg);
+</script>

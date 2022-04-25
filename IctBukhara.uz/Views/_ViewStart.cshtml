@@ -1,0 +1,10 @@
+﻿@{
+    var controllerName = ViewContext.RouteData.Values["Controller"].ToString().ToLower();
+    if(controllerName=="admin"){
+        Layout = "_AdminLayout";
+    }else if(controllerName=="home"){
+        Layout = "_HomeLayout";
+    }else{
+        Layout = "_OtherLayout";
+    }
+}

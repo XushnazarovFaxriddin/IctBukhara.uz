@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/style/sass/responsive.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/style/sass/style.css" asp-append-version="true">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="~/style/css/swiper.css" asp-append-version="true">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>@(ViewData["Title"]??"ICT Academy")</title>
+    @await RenderSectionAsync("CssRender", required: false)
+</head>
+<body>
+    <marquee style="color:red;">Sayt test rejimida ishlamoqda!</marquee>
+    <div id="begin">
+
+        <div id="menu">
+            <img src="~/img/logo.png" asp-append-version="true" alt="logo">
+            <ul class="ul_menu">
+                <li><a href="/home/index">Asosiy</a></li>
+                <li><a href="/home/index#about">Biz haqimizda</a></li>
+                <li><a href="/home/index#Courses">Kurslar</a></li>
+                <li><a href="/home/index#Mentors">Mentorlar</a></li>
+            </ul>
+
+            <div class="phone">
+                <div class="number">
+                    <a style="display:flex;">
+                        <img src="~/img/phone.png" asp-append-version="true" alt="icons">
+                        <h4>99 876 54 32</h4>
+                    </a>
+                </div>
+                <div class="vaqt">
+                    <p>Ish vaqti: 08:00-22:00</p>
+                </div>
+            </div>
+
+            <div class="menu_icons" style="display: none;">
+                <ion-icon class="yop" onclick="menu(1)" name="menu-outline"></ion-icon>
+                <ion-icon class="och" onclick="menu(0)" style="display: none;" name="close-outline"></ion-icon>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            @RenderBody()
+
+            <div id="footer">
+
+                <div class="container">
+
+                    <div class="footer_menu">
+                        <div class="logo">
+                            <img src="~/img/logo.png" asp-append-version="true" alt="logo">
+                        </div>
+
+                        <div class="menu">
+                            <a href="/home/index">Asosiy</a>
+                            <a href="/home/index#Courses">Kurslar</a>
+                            <a href="/home/index#Mentors">Mentorlar</a>
+                            <a href="tel:998765432">Yordam</a>
+                            <a href="tel:998765432">Bog'lanish</a>
+                        </div>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="footer_loc">
+                        <div id="icons">
+                            <div class="d-f">
+                                <ion-icon name="location-outline"></ion-icon>
+                                <p>Buxoro shahar, Ibrohim Muminov ko‘chasi 15-uy</p>
+                            </div>
+
+                            <div class="d-f">
+                                <div class="d-f">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                    <p>(123) 456-7890</p>
+                                </div>
+
+                                <div class="d-f">
+                                    <ion-icon name="print-outline"></ion-icon>
+                                    <p>(123) 456-7890</p>
+                                </div>
+                            </div>
+
+                            <div class="d-f">
+                                <p>Social Media</p>
+                                <a href="#">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </a>
+
+                                <a href="#">
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </a>
+                                <a href="#">
+                                    <ion-icon name="logo-linkedin"></ion-icon>
+                                </a>
+                                <a href="#">
+                                    <ion-icon name="logo-youtube"></ion-icon>
+                                </a>
+                                <a href="#">
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                </a>
+                                <a href="#">
+                                    <ion-icon name="logo-google"></ion-icon>
+                                </a>
+                                <a href="#">
+                                    <ion-icon name="logo-pinterest"></ion-icon>
+                                </a>
+                                <a href="#">
+                                    <ion-icon name="logo-rss"></ion-icon>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="Locatsio">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d766.7103140712829!2d64.43079192839183!3d39.76567242563051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suz!2s!4v1649408788366!5m2!1suz!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="huquq">
+                        <h2>
+                            ictBukhara.uz 2022 ©. Barcha huquqlar himoyalangan.
+                        </h2>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    @await RenderSectionAsync("ModelRender", required:false)
+
+    <script src="~/JS/main.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" asp-append-version="true"></script>
+    <script src="~/JS/swiper.js" asp-append-version="true"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" asp-append-version="true"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("JsRender", required: false)
+</body>
+</html>
+@* <script src="~/js/site.js" asp-append-version="true"></script>*@
+@* @await RenderSectionAsync("Scripts", required: false)*@

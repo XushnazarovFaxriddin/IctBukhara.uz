@@ -1,0 +1,167 @@
+#begin .container .haqida {
+  margin-top: 100px;
+  width: 1230px;
+}
+
+#begin .container .haqida h2 {
+  font-family: var(--fonts);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+  /* identical to box height */
+  color: #2D2550;
+  margin-bottom: 50px;
+}
+
+#begin .container .haqida .dav {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#begin .container .haqida .dav .img {
+  width: 300px;
+  height: 300px;
+  border-radius: 12px;
+}
+
+#begin .container .haqida .dav .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+#begin .container .haqida .dav .text {
+  margin-left: 80px;
+}
+
+#begin .container .haqida .dav .text p {
+  width: 620px;
+  font-family: var(--fonts);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  /* or 160% */
+  color: #2D2550;
+}
+
+#begin .container .haqida .dav .text h3 {
+  margin-top: 40px;
+  font-family: var(--fonts);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #2D2550;
+}
+
+#begin .container .haqida h1 {
+  margin-top: 77px;
+  margin-bottom: 20px;
+  font-family: var(--fonts);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 34px;
+  /* identical to box height */
+  color: #2D2550;
+}
+
+#begin .container .haqida ul li {
+  margin-bottom: 10px;
+  margin-left: 40px;
+  font-family: var(--fonts);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
+  /* Light text color */
+  color: #5A5477;
+}
+
+#begin .container .haqida h4 {
+  margin-top: 56px;
+  margin-bottom: 88px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 200px;
+  height: 54px;
+  background: #2DDC90;
+  border-radius: 7px;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+#begin .container .haqida h4:hover {
+  background: none;
+  color: #2DDC90;
+  border: #2DDC90 1px solid;
+}
+
+#begin .container .kurslar {
+  margin-bottom: 510px;
+}
+
+#begin .container .kurslar h1 {
+  font-family: var(--fonts);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 34px;
+  /* identical to box height */
+  color: #2D2550;
+}
+
+#begin .container .kurslar a {
+  margin-bottom: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 200px;
+  height: 54px;
+  background: #2DDC90;
+  border-radius: 7px;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+#begin .container .kurslar a:hover {
+  background: none;
+  color: #2DDC90;
+  border: #2DDC90 1px solid;
+}
+
+#begin .container .kurslar .Course {
+  margin-top: 40px !important;
+}
+/*# sourceMappingURL=kurslar_haqida.css.map */

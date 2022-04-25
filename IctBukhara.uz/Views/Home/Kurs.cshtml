@@ -1,0 +1,130 @@
+﻿@model SubscriptionKurs
+@{
+    var kurs = ViewData["Kurs"] as Kurs;
+    ViewData["Title"] = $"{kurs?.Name} - kursi";
+    var li = kurs?.Learning?.Split("\n");
+    var errorSendMessage = ViewData["ErrorSendMessage"] as ErrorSendMessage;
+}
+@section CssRender{
+    <link rel="stylesheet" href="~/style/sass/kurslar.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/style/sass/kurslar_haqida.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/style/sass/ssssss.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/style/sass/responsive2.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/style/sass/responsive3.css" asp-append-version="true">
+}
+    <div class="haqida">
+        <h2>@kurs?.Name kursi</h2>
+        <div class="dav">
+            <div class="img">
+                <img src="/@kurs?.ImageName" asp-append-version="true" alt="">
+            </div>
+
+            <div class="text">
+                <p>Kurs haqida: @kurs?.Discription</p>
+
+                <h3>Kurs davomiyligi: @kurs?.Duration</h3>
+            </div>
+        </div>
+        <h1>Bu kursda nimalarni o'rganasiz?</h1>
+        <ul>
+            @foreach (var l in li ?? new string[] { "kechirasiz", "tizimda", "xatolik", "qaytadan urnab ko'ring!" })
+        {
+            <li>@l</li>
+        }
+    </ul>
+
+    <h4 onclick="drop_toggle(0)">Kursga yozilish</h4>
+</div>
+
+<div class="kurslar">
+    <a asp-action="BarchaKurslar" asp-controller="Home">Boshqa kurslar</a>
+    @*<h1>Boshqa kurslar</h1>
+    <div class="Courses">
+    @for (int i = 0; i < 20; i++)
+    {
+    <div class="Course">
+    <div class="img">
+    <img src="./img/robototexnik.png" alt="c++">
+    </div>
+    <h3>Robototexnika</h3>
+    <div class="user">
+    <img src="./img/user.png" alt="user">
+    <h5>Tohirov Fatxiddin</h5>
+    </div>
+    </div>
+    }
+    </div>*@
+</div>
+
+@section ModelRender{
+    <div id="modal_r" style="display: none;">
+        <div id="kurs_reg" class="kurs_reg">
+            <div class="img">
+                <img src="~/img/kurs_reg.png" asp-append-version="true" alt="reg">
+            </div>
+
+            <div class="text">
+                <form id="kursga-yozilish" enctype="multipart/form-data" asp-action="Kurs" asp-controller="Home" method="post">
+                    <h1>@kurs?.Name kursiga ro‘yxatdan o‘tish</h1>
+                    <input type="hidden" asp-for="KursName" value="@kurs?.Name" />
+                    <input type="hidden" asp-for="KursId" value="@kurs?.Id" />
+
+                    <p>Ushbu kursni o‘rganmoqchi yoki kurs haqida batafsil ma’lumot olmoqchi bo‘lsangiz quyidagilarni to‘ldiring. Tezda aloqaga chiqamiz!</p>
+
+                    <input type="text" maxlength="30" asp-for="Name" placeholder="To‘liq ism familiyangiz">
+                    <div class="phone">
+                        <h4>+998</h4>
+                        <input type="text" asp-for="Tel" minlength="9" maxlength="9" id="phone" placeholder="Telefon raqamingiz" onkeyup="formatPhoneNumber(this.value)">
+                    </div>
+                    <a id="yuborishBtn" onclick="document.getElementById('kursga-yozilish').submit()">Yuborish</a>
+                </form>
+            </div>
+
+            <ion-icon onclick="drop_toggle(1)" name="close-outline"></ion-icon>
+
+        </div>
+    </div>
+
+    <div id="modal_t" style="display: none;">
+        <div id="tasdiq">
+            <h1>Arizangiz muvaffaqiyatli <br> jo‘natildi</h1>
+            <p>Tez orada operatorlarimiz siz bilan bog‘lanishadi</p>
+            <div class="img">
+                <img src="~/img/tastqilandi.png" asp-append-version="true" alt="g">
+            </div>
+            <h3 onclick="drop_toggle(4)">Asosiy oynaga qaytish</h3>
+        </div>
+    </div>
+
+    <div id="modal_t_x" style="display: none;">
+        <div id="tasdiq">
+            <h1>Arizangiz yuborilmadi!</h1>
+            <p>Xatolik: <b style="color:red;">@errorSendMessage?.Message</b></p>
+            <span style="color:red;" asp-validation-for="Name" class="text-danger"></span>
+            <span style="color:red;" asp-validation-for="Tel" class="text-danger"></span>
+            <span style="color:red;" asp-validation-for="KursName" class="text-danger"></span>
+            <div class="img">
+                <img src="~/img/tastqilanmadi.png" alt="g" asp-append-version="true">
+            </div>
+            <h3 onclick="drop_toggle(4)">Asosiy oynaga qaytish</h3>
+        </div>
+    </div>
+}
+
+
+    @section JsRender{
+    <script>
+        function yuborishBtnClick() {
+            document.getElementById("kursga-yozilish").submit()
+        }
+
+        @*drop_toggle(5) 5 yuborsak qabul qilindi, 6 yuborsak error
+        oynani ochish uchun drop_toggle(5)*@
+
+                if (@(errorSendMessage?.Error.ToString().ToLower())) {
+            drop_toggle(6);
+        } else {
+            drop_toggle(5);
+        }
+    </script>
+}

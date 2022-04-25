@@ -1,0 +1,103 @@
+﻿@model IndexView
+@{
+    ViewData["Title"] = "Bosh sahifa";
+    var widthWindow = Context.Request;
+}
+
+<div id="main">
+    <div class="text">
+        <h1>Mixtortar ustozlar bizning academyda</h1>
+        <p>Zamonaviy IT kasblarini bizning mixtortar ustozlardan o‘rganing va o‘z kelajak hayotingizga erkinlik kiriting!</p>
+
+        <a asp-action="BarchaKurslar" asp-controller="Home">Barcha kurslar</a>
+    </div>
+
+    <div class="img">
+        <img src="~/img/main_img.png" asp-append-version="true" alt="img">
+    </div>
+</div>
+
+<div id="about">
+    <div class="video">
+        <h2>Biz haqimizda</h2>
+        <a href="#">
+            <img src="~/img/video_img.png" asp-append-version="true" alt="video">
+        </a>
+    </div>
+
+    <div class="text">
+
+        <p>O‘quv markaz 2022-yilda tashkil topgan. O‘quv markazimizda kamida 3 yil tajribaga ega bo‘lgan ustozlar o‘z bilimlarini ulashib borishadi.</p>
+
+        <p>Biz o‘zimizning  o‘quv markazimizni maqtamaymiz. Shunchaki o‘ng tomondagi 360° da olingan video tasvirni ko‘rsangiz barchasiga o‘zingiz amin bo‘lasiz.</p>
+
+    </div>
+</div>
+
+<div id="Courses">
+    <div class="sah">
+        <h2>Bizning kurslar</h2>
+        <a asp-action="BarchaKurslar" asp-controller="Home">Barchasini ko‘rish →</a>
+    </div>
+
+    <div class="Courses">
+        @try
+        {
+            @foreach (var kurs in Model.Kurslar.Reverse().Take(8))
+            {
+                <div onclick="window.location.href='/Home/Kurs?id=@kurs.Id'" class="Course">
+                    <div class="img">
+                        <img src="~/@kurs.ImageName" asp-append-version="true" alt="c++">
+                    </div>
+
+                    <h3>@kurs.Name</h3>
+
+                    <div class="user">
+                        <img src="~/@kurs.Mentor?.ImageName" asp-append-version="true" alt="user">
+                        <h5>@kurs.Mentor?.FullName</h5>
+                    </div>
+                </div>
+            }
+        }
+        catch (Exception e)
+        {
+            <h1>Texnik profilaktika</h1>
+        }
+    </div>
+</div>
+
+<div id="Mentors">
+    <h3>Mentorlar</h3>
+    <h5>Mentorning portfoliosi bu uning yuzi😉! Mentorlarimiz <br>  tajribasini ularning portfoliosidan bilib olsangiz bo‘ladi</h5>
+
+    <div class="cards">
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                @try
+                {
+                    @foreach (var mentor in Model.Mentorlar)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                            <div class="img">
+                                <img src="~/@mentor.ImageName" asp-append-version="true" alt="mentor">
+                            </div>
+                            <h2>@mentor.FullName</h2>
+                            <p>@mentor.Discription</p>
+                            <a href="@mentor.CvUrl">@mentor.Cv →</a>
+                        </div>
+                        </div>
+                    }
+
+                }catch(Exception e)
+                {
+                     <h1>Texnik profilaktika</h1>
+                }
+            </div>
+            <div style="display: none;" class="swiper-pagination"></div>
+        </div>
+
+    </div>
+
+</div>
